@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Image Editor</title>
+
+  <!-- Tui Color Picker -->
+  <link type="text/css" href="../tui-color-picker/tui-color-picker.css" rel="stylesheet" />
+  <script type="text/javascript" src="../tui-color-picker/tui-color-picker.js"></script>
+
+
+  <!-- Tui Image Editor -->
+  <link rel="stylesheet" href="../tui-image-editor/tui-image-editor.css" />
+  <script type="text/javascript" src="../tui-image-editor/tui-image-editor.js"></script>
+
+  <!-- File Saver -->
+  <script type="text/javascript" src="../file-saver/FileSaver.js"></script>
+
+  <!-- Tui Themes -->
+  <script type="text/javascript" src="../tui-theme/white-theme.js"></script>
+  <script type="text/javascript" src="../tui-theme/black-theme.js"></script>
+
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #tui-image-editor {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="tui-image-editor"></div>
+  <script type="text/javascript">
+    var imageEditor = new tui.ImageEditor("#tui-image-editor", {
+      includeUI: {
+        theme: blackTheme,
+        initMenu: "filter",
+        menuBarPosition: "top",
+      },
+      usageStatistics: false,
+    });
+
+    window.onresize = function () {
+      imageEditor.ui.resizeEditor();
+    };
+  </script>
+</body>
+
+</html>
